@@ -1,0 +1,24 @@
+{
+  "name": "iiml-vms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Visitor Management System for IIM Lucknow",
+  "workspaces": [
+    "backend",
+    "portal",
+    "gate",
+    "register"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w portal\" \"npm run dev -w gate\" \"npm run dev -w register\"",
+    "dev:api": "npm run dev -w backend",
+    "dev:portal": "npm run dev -w portal",
+    "dev:gate": "npm run dev -w gate",
+    "dev:register": "npm run dev -w register",
+    "build": "npm run build -w backend && npm run build -w portal && npm run build -w gate && npm run build -w register",
+    "seed": "npm run seed -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
